@@ -7,7 +7,7 @@ function App() {
   const add = async (e) => {
     e.preventDefault()
     try {
-      const { data } = await axios.post('http://localhost:5000/add-name', { name: text }, { withCredentials: true })
+      const { data } = await axios.post('https://backend-deploy-orcin.vercel.app/add-name', { name: text }, { withCredentials: true })
       setState([...state, data])
     } catch (error) {
       console.log(error.response.data)
@@ -15,7 +15,7 @@ function App() {
   }
   const getData = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/', { withCredentials: true })
+      const { data } = await axios.get('https://backend-deploy-orcin.vercel.app/', { withCredentials: true })
       setState(data.data)
     } catch (error) {
       console.log(error.response)
